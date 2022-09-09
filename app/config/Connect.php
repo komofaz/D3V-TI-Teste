@@ -1,4 +1,6 @@
 <?php
+    // Conexão com Banco de dados
+    
     define('HOST','localhost');
     define('DB','db_teste');
     define('USER','root');

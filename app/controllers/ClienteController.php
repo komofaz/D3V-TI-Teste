@@ -7,17 +7,20 @@
             $this->model = new ClienteModel();            
         }
 
+        // Lista os Clientes
         public function index(){
             $rows = $this->model->listar();
             require_once('./views/ClienteList.php');
         }
 
+        // Abre o formulário de edição do Cliente
         public function editar(){
             $this->model->cod_cliente = $_GET['cod_cliente'];
             $row = $this->model->editar();
             require_once('./views/ClienteEditar.php');            
         }
 
+        // Atualiza os dados do Cliente no Banco de Dados
         public function atualizar(){
             $this->model->cod_cliente = $_POST['cod_cliente'];
             
@@ -32,22 +35,42 @@
                 $this->model->estado = $_POST['estado'];
                 $this->model->data_inclusao = date('Y-m-d');
 
-                $this->model->atualizar();
+                
+                if($this->model->atualizar()){
+                    header("Refresh:0; url='/");
+                } else {
+                    header("Refresh:0; url='/error'");
+                }
 
             } else {
-                echo 'Erro: Campos Obrigatórios estão vazios..';
+                header("Refresh:0; url='/error'");
             } 
         }
 
-        public function deletar(){
+        // Abre o Aviso de Exclusão
+        public function excluir(){
+            // Verificar Aqui se Tem contato ou não
             $this->model->cod_cliente = $_GET['cod_cliente'];
+            $row = $this->model->editar();
             require_once('./views/ClienteExcluir.php');
         }
 
+        // Deleta Cliente no banco de dados
+        public function deletar(){
+            $this->model->cod_cliente = $_GET['cod_cliente'];
+            if($this->model->deletar()){
+                header("Refresh:0; url='/");
+            } else {
+                header("Refresh:0; url='/error'");
+            }
+        }
+
+        // Abre formulário de cadastro
         public function cadastrar(){
             require_once('./views/ClienteCadastro.php');
         }
 
+        // Salva os dados do cadastro no banco de dados
         public function salvar(){
             //Verificar se os campos obrigatórios não estão vazios
             if (!empty($_POST['razao_social']) and !empty($_POST['nome_fantasia'])){
@@ -62,16 +85,17 @@
                 $this->model->data_inclusao = date('Y-m-d');
 
                 if($this->model->salvar()){
-                    //carregar tela editar do cliente
-                    echo 'sucesso';
+                    header("Refresh:0; url='/cliente/editar'");
                 } else {
-                    //tela de erro
-                    echo 'fracasso';
+                    header("Refresh:0; url='/error'");
                 }
             } else {
-                echo 'Erro: Campos Obrigatórios estão vazios..';
-            }           
-
-            
+                header("Refresh:0; url='/error'");
+            }          
+        }
+        
+        // Tela de erro padrão
+        public function error(){
+            require_once('./views/Error.php');
         }
     }

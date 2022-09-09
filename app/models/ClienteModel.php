@@ -3,13 +3,11 @@
 
     class ClienteModel extends Connect{        
 
-        private $table;
         public $razao_social,$nome_fantasia,$endereco,$complemento,$bairro,$cidade,$estado,$data_inclusao; 
         public $cod_cliente;
 
         public function __construct(){
             parent::__construct();
-            $this->table = 'Cliente';
         }
 
         public function listar(){
@@ -33,12 +31,11 @@
             $rows = $this->connection->query(
                 'INSERT INTO CLiente(razao_social,nome_fantasia,endereco,complemento,bairro,cidade,estado,data_inclusao) 
                  VALUES ("'.$this->razao_social.'","'.$this->nome_fantasia.'","'.$this->endereco.'","'.$this->complemento.'",
-                         "'.$this->bairro.'","'.$this->cidade.'","'.$this->estado.'","'.$this->data_inclusao.'");')
-                 or die(mysqli_error($this->connection)); 
+                         "'.$this->bairro.'","'.$this->cidade.'","'.$this->estado.'","'.$this->data_inclusao.'");'); 
             return $rows;
         }
 
         public function deletar(){
-            $this->connection->query('DELETE FROM Cliente WHERE cod_cliente =');
+            $this->connection->query('DELETE FROM Cliente WHERE cod_cliente ='.$this->cod_cliente.';');
         }
     }

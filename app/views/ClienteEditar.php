@@ -24,8 +24,8 @@
                     <td class="col_base" colspan="2"></td>
                 </tr>
                 <tr class="td_left">
-                    <td class="title">Cód. Cliente:</td>
-                    <td colspan="8"><input class="readonly" type="text" name="cod_cliente" value="<?= $row['cod_cliente'] ?>" readonly></td>
+                    <td class="title" >Cód. Cliente:</td>                    
+                    <td colspan="8"><input class="readonly" type="number" name="cod_cliente" value="<?= $row['cod_cliente'] ?>" readonly></td>
                 </tr>
                 <tr class="td_left">
                     <td class="title">Razão Social:</td>
@@ -37,27 +37,27 @@
                 </tr>
                 <tr class="td_left">
                     <td class="title">Endereço:</td>
-                    <td colspan="8"><input type="text" name="endereco" size="100" required maxlength="100" value="<?= $row['endereco'] ?>"></td>
+                    <td colspan="8"><input type="text" name="endereco" size="100" maxlength="100" value="<?= $row['endereco'] ?>"></td>
                 </tr>
                 <tr class="td_left">
                     <td class="title">Complemento:</td>
-                    <td colspan="8"><input type="text" name="complemento" size="60" required maxlength="50" value="<?= $row['complemento'] ?>"></td>
+                    <td colspan="8"><input type="text" name="complemento" size="60" maxlength="50" value="<?= $row['complemento'] ?>"></td>
                 </tr>
                 <tr class="td_left">
                     <td class="title">Bairro:</td>
-                    <td colspan="8"><input type="text" name="bairro" size="60" required maxlength="50" value="<?= $row['bairro'] ?>"></td>
+                    <td colspan="8"><input type="text" name="bairro" size="60" maxlength="50" value="<?= $row['bairro'] ?>"></td>
                 </tr>
                 <tr class="td_left">
                     <td class="title">Cidade:</td>
-                    <td colspan="8"><input type="text" name="cidade" size="60" required maxlength="50" value="<?= $row['cidade'] ?>"></td>
+                    <td colspan="8"><input type="text" name="cidade" size="60" maxlength="50" value="<?= $row['cidade'] ?>"></td>
                 </tr>
                 <tr class="td_left">
                     <td class="title">Estado:</td>
-                    <td colspan="8"><input type="text" name="estado" size="4" required maxlength="2" value="<?= $row['estado'] ?>"></td>
+                    <td colspan="8"><input type="text" name="estado" size="4" maxlength="2" value="<?= $row['estado'] ?>"></td>
                 </tr>
                 <tr class="td_left">
-                    <td class="title">Data de Inclusão:</td>
-                    <td colspan="8"><?= date("d-m-Y",strtotime($row['data_inclusao'])) ?></td>                    
+                    <td class="title" >Data de Inclusão:</td>
+                    <td colspan="8"><input class="readonly" type="text" name="data_inclusao" value="<?= date("d-m-Y",strtotime($row['data_inclusao'])) ?>" readonly></td>                    
                 </tr>  
                 <tr>
                     <td class="col_base sub_title td_left">Contatos</td>

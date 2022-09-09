@@ -4,6 +4,8 @@
     $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
     $cliente = new ClienteController(); 
+
+    // Rotas do Sistema
     switch($url){
         case '/':
             $cliente->index();
@@ -20,11 +22,14 @@
         case '/cliente/editar/atualizar';
             $cliente->atualizar();
             break;
-        case '/cliente/deletar':
+        case '/cliente/excluir':
+            $cliente->excluir();
+            break;
+        case '/cliente/excluir/deletar':
             $cliente->deletar();
             break;
         default:
-            echo 'Erro 404';
+            $cliente->error();
     }      
 
     
