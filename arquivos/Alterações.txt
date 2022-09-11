@@ -1,0 +1,4 @@
+1 - cod_cliente -> feito automaticamente pelo Sistema
+2 - data_inclusao -> feita automaticamente pelo Sistema
+
+3 - tamanho do campo celular no banco de dados para 14

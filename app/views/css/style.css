@@ -1,3 +1,7 @@
+html{
+    font-family:"Trebuchet MS" ;
+}
+
 table{
     width: 100%;    
     border-collapse: collapse;
@@ -67,12 +71,15 @@ td{
 .new_button, .edit_button, .delete_button{
     text-decoration: none;
     text-align: center;
+    border: 1px solid black;
     /*border-radius: 5px;*/
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
     /*box-shadow: 1px 1px 2px black;*/
+    font-family: Tahoma;
+    font-size: small;
 }
 
 .new_button:hover, .edit_button:hover, .delete_button:hover{

@@ -10,7 +10,7 @@
     <div>
         <h1>Ocorreu Algum Erro !</h1>
         <h3>Redirecionando...</h3>
-        <?php header("Refresh:5; url='/'"); ?>
+        <?php header("Refresh:3; url='/'"); ?>
     </div>
 </body>
 </html>

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div>
-        <h2>Cadastro de Clientes/Contatos</h2>
+        <h2>Cadastro de Cliente</h2>
 
         <form action="/cliente/cadastrar/salvar" method="POST">
             <table>
@@ -49,7 +49,7 @@
                 </tr>
                 <tr class="td_left">
                     <td class="title">Estado:</td>
-                    <td colspan="8"><input type="text" name="estado" size="4" maxlength="2"></td>
+                    <td colspan="8"><input type="text" name="estado" size="4" maxlength="2" style="text-transform:uppercase"></td>
                 </tr>
                 <!--
                 <tr class="td_left">
@@ -57,10 +57,10 @@
                     <td colspan="8"><input type="date" name="data_inclusao"></td>
                 </tr>  
                 -->
-                <tr class="title">
-                    <td colspan="8">
+                <tr>
+                    <td class="col_base" colspan="8">
                         <button class="new_button" type="submit">Cadastrar</button>
-                        <button class="delete_button" type="cancel">Cancelar</button>
+                        <a class="button delete_button" href="/">Cancelar</a>
                     </td>                  
                 </tr>           
             </table>             

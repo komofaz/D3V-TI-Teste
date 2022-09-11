@@ -73,7 +73,7 @@
                 </tr> 
                 <tr><td class="col_base"></td></tr>
                 <tr>
-                    <td class="col_base"><a class="button new_button" href="/contato/cadastrar?cod_cliente=<?= $row['cod_cliente']?>">Novo Contato</a></td>
+                    <td class="col_base"><a class="button new_button" href="/contato">Novo Contato</a></td>
                 </tr>
                 <tr><td class="col_base"></td></tr>
                 <tr class="title">

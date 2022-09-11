@@ -38,6 +38,7 @@
     </div>
     <div class="mg_top">
         <a class="new_button" href="/cliente/cadastrar">Cadastrar Cliente</a> 
+        <a class="edit_button" href="/">Relatório</a>
     </div>
 </body>
 </html>
