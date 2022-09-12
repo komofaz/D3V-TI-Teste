@@ -21,7 +21,7 @@
 
         public function listar(){
             $rows = $this->connection->query(
-                'SELECT cliente.*,COUNT(contato.cod_cliente) as contatos FROM cliente LEFT JOIN contato ON cliente.cod_cliente=contato.cod_cliente GROUP BY contato.cod_cliente;'
+                'SELECT cliente.*,COUNT(contato.cod_cliente) as contatos FROM cliente LEFT JOIN contato ON cliente.cod_cliente=contato.cod_cliente GROUP BY cliente.cod_cliente;'
             );
             return $rows;       
         }  
@@ -50,7 +50,8 @@
         }        
 
         public function deletar(){
-            $row = $this->connection->query('DELETE FROM Cliente WHERE cod_cliente ='.$this->cod_cliente.';');
+            $row = $this->connection->query('DELETE FROM Cliente WHERE cod_cliente ='.$this->cod_cliente.';');                        
             return $row;
         }
+        
     }

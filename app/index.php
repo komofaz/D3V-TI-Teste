@@ -1,11 +1,13 @@
 <?php
     require_once('./controllers/ClienteController.php');    
     require_once('./controllers/ContatoController.php');
+    require_once('./controllers/RelatorioController.php');
 
     $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
     $cliente = new ClienteController(); 
     $contato = new ContatoController();
+    $relatorio = new RelatorioController();
 
     // Rotas do Sistema
     switch($url){
@@ -47,6 +49,9 @@
             break;
         case '/contato/excluir/deletar':
             $contato->deletar();
+            break;
+        case '/relatorio':
+            $relatorio->index();
             break;
         default:
             $cliente->error();

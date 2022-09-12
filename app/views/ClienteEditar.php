@@ -82,8 +82,8 @@
                         <td><?= $row['celular'] ?></td>
                         <td colspan="2"><?= $row['email'] ?></td>  
                         <td colspan="8">
-                            <a class="edit_button" href="/contato/editar?cod_contato=<?= $row['cod_contato'] ?>">Editar</a> 
-                            <a class="delete_button" href="/contato/excluir?cod_contato=<?= $row['cod_contato'] ?>">Excluir</a> 
+                            <a class="edit_button" href="/contato/editar?cod_contato=<?= $row['cod_contato']?>">Editar</a> 
+                            <a class="delete_button" href="/contato/excluir?cod_cliente=<?= $row['cod_cliente'] ?>&cod_contato=<?= $row['cod_contato'] ?>">Excluir</a> 
                         </td>                  
                     </tr>
                 <?php } ?>

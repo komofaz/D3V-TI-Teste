@@ -17,24 +17,20 @@
                 <td class="col_base"></td>
             </tr>
             <tr class="td_left">
-                <td>Cód. Cliente:</td>
-                <td colspan="3"><?= $row['cod_cliente'] ?></td>
+                <td>Cód. Contato:</td>
+                <td colspan="3"><?= $row['cod_contato'] ?></td>
             </tr>
             <tr class="td_left">
-                <td>Razão Social:</td>
-                <td colspan="3"><?= $row['razao_social'] ?></td>
-            </tr>
-            <tr class="td_left">
-                <td>Nome Fantasia:</td>
-                <td colspan="3"><?= $row['nome_fantasia'] ?></td>
+                <td>Nome:</td>
+                <td colspan="3"><?= $row['nome_contato'] ?></td>
             </tr>
             <tr>
-                <td colspan="4" class="title">Tem Certeza que Gostaria de Excluir o Cliente Acima?</td>
+                <td colspan="4" class="title">Tem Certeza que Gostaria de Excluir o Contato Acima?</td>
             </tr>
             <tr>
                 <td colspan="4" class="col_base">
-                    <a class="delete_button" href="/cliente/excluir/deletar?cod_cliente=<?= $row['cod_cliente'] ?>">Excluir</a>                
-                    <a class="new_button" href="/">Não Excluir</a> 
+                    <a class="delete_button" href="/contato/excluir/deletar?cod_cliente=<?= $row['cod_cliente'] ?>&cod_contato=<?= $row['cod_contato'] ?>">Excluir</a>                
+                    <a class="new_button" href="/cliente/editar?cod_cliente=<?= $row['cod_cliente'] ?>">Não Excluir</a> 
                 </td>
             </tr>
         </table>        

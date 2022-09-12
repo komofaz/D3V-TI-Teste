@@ -23,18 +23,24 @@
 
         public function salvar(){
             $rows = $this->connection->query(
-                'INSERT INTO contato(cod_cliente,nome_contato,telefone_1,telefone_2,celular,email)
+                'INSERT INTO Contato(cod_cliente,nome_contato,telefone_1,telefone_2,celular,email)
                 VALUES ('.$this->cod_cliente.',"'.$this->nome.'","'.$this->tel_1.'","'.$this->tel_2.'","'.$this->cel.'","'.$this->email.'");'
             );
             return $rows;
         }
 
         public function atualizar(){
-            echo 'atualizar contato model';
+            $rows = $this->connection->query(
+                'UPDATE Contato SET nome_contato="'.$this->nome.'",telefone_1="'.$this->tel_1.'",telefone_2="'.$this->tel_2.'",celular="'.$this->cel.'",email="'.$this->email.'" WHERE cod_contato ='.$this->cod_contato.';'
+            );
+            return $rows;
         }
 
         public function deletar(){
-            echo 'deletar contato model';
+            $rows = $this->connection->query(
+                'DELETE FROM Contato WHERE cod_contato ='.$this->cod_contato.';' 
+            );
+            return $rows;
         }
 
     }

@@ -58,9 +58,9 @@
 </body>
 
 <script>
-    function mask(campo) {        
+function mask(campo) {    
     setTimeout(function() {
-        if("contato_cel"){
+        if(campo.name == "contato_cel"){
             var v = celular(campo.value);
         } else {
             var v = telefone(campo.value);
@@ -77,9 +77,9 @@ function telefone(valor) {
     mascara = mascara.replace(/^0/, "");
     if (mascara.length > 5) {
         mascara = mascara.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1)$2-$3");
-    } else if (mascara.length > 2) {
+    } else if (mascara.length > 1) {
         mascara = mascara.replace(/^(\d\d)(\d{0,5})/, "($1)$2");
-    } else {
+    } else if (mascara.length == 1){
         mascara = mascara.replace(/^(\d*)/, "($1");
     }
     return mascara;

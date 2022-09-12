@@ -49,6 +49,10 @@ td{
     text-align: left;
 }
 
+.td_center{
+    text-align: center;
+}
+
 .mg_top{
     margin-top: 15px;
 }

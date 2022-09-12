@@ -11,22 +11,33 @@
     <div>
         <h2>Lista de Clientes/Contatos</h2>
         <table>
+            <tr>
+                <td class="col_base"></td>
+                <td class="col_base"></td>
+                <td class="col_base"></td>
+                <td class="col_base"></td>
+                <td class="col_base"></td>
+                <td class="col_base"></td>
+                <td class="col_base"></td>
+                <td class="col_base"></td>
+                <td class="col_base" colspan="2"></td>
+            </tr>
             <tr class='title'>
                 <td class="small">Cód. Cliente</td>
-                <td>Razão Social</td>
-                <td>Nome Fantasia</td>
-                <td>Data de Inclusão</td>
-                <td>Nº Contatos</td>
+                <td colspan="3">Razão Social</td>
+                <td colspan="2">Nome Fantasia</td>
+                <td colspan="1">Data de Inclusão</td>
+                <td colspan="1">Nº Contatos</td>
                 <td class="small" colspan="2"></td>
             </tr>
             <?php foreach($rows as $row): ?>
                 <tr>
                     <td class="small td_right"><?= $row['cod_cliente'] ?></td>
-                    <td class="td_left"><?= $row['razao_social'] ?></td>
-                    <td class="td_left"><?= $row['nome_fantasia'] ?></td>
-                    <td><?= date("d-m-Y", strtotime($row['data_inclusao'])) ?></td>
-                    <td><?= $row['contatos'] ?></td>
-                    <td class="small">
+                    <td colspan="3" class="td_left"><?= $row['razao_social'] ?></td>
+                    <td colspan="2" class="td_left"><?= $row['nome_fantasia'] ?></td>
+                    <td colspan="1"><?= date("d-m-Y", strtotime($row['data_inclusao'])) ?></td>
+                    <td colspan="1"><?= $row['contatos'] ?></td>
+                    <td colspan="2" class="small">
                         <a class="edit_button" href="/cliente/editar?cod_cliente=<?= $row['cod_cliente'] ?>">Editar</a>                        
                     <?php 
                         if ((int)$row['contatos'] == 0){                                                    
@@ -42,7 +53,7 @@
     </div>
     <div class="mg_top">
         <a class="new_button" href="/cliente/cadastrar">Cadastrar Cliente</a> 
-        <a class="edit_button" href="/">Relatório</a>
+        <a class="edit_button" href="/relatorio">Relatório</a>
     </div>
 </body>
 </html>
