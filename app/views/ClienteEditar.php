@@ -30,11 +30,11 @@
                 </tr>
                 <tr class="td_left">
                     <td class="title">Razão Social:</td>
-                    <td colspan="8"><input type="text" name="razao_social" size="100" required maxlength="100" value="<?= $row['razao_social'] ?>"></td>
+                    <td colspan="8"><input type="text" name="razao_social" size="100" required maxlength="100" value="<?= $row['razao_social'] ?>" autocomplete="off"></td>
                 </tr>
                 <tr class="td_left">
                     <td class="title">Nome Fantasia:</td>
-                    <td colspan="8"><input type="text" name="nome_fantasia" size="60" required maxlength="50" value="<?= $row['nome_fantasia'] ?>"></td>
+                    <td colspan="8"><input type="text" name="nome_fantasia" size="60" required maxlength="50" value="<?= $row['nome_fantasia'] ?>" autocomplete="off"></td>
                 </tr>
                 <tr class="td_left">
                     <td class="title">Endereço:</td>

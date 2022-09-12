@@ -28,7 +28,7 @@
                 </tr>
                 <tr class="td_left">
                     <td class="title">Nome:</td>
-                    <td colspan="8"><input type="text" name="contato_nome" size="100" required maxlength="100" required></td>
+                    <td colspan="8"><input type="text" name="contato_nome" size="100" required maxlength="100" autocomplete="off" required></td>
                 </tr>
                 <tr class="td_left">
                     <td class="title">Telefone 1:</td>
