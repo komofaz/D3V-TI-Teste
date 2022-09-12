@@ -2,3 +2,8 @@
 2 - data_inclusao -> feita automaticamente pelo Sistema
 
 3 - tamanho do campo celular no banco de dados para 14
+
+
+--  Poderia ser alterado
+
+1) Tipo das primary key para int ao invés de bigint

@@ -21,6 +21,7 @@
                     <td class="col_base"></td>
                     <td class="col_base"></td>
                     <td class="col_base"></td>
+                    <td class="col_base"></td>
                     <td class="col_base" colspan="2"></td>
                 </tr>
                 <tr class="td_left">
@@ -66,18 +67,33 @@
                 <tr class="title">
                     <td>Cód. Contato</td>
                     <td colspan="2">Nome</td>
-                    <td>Telefone</td>
+                    <td>Telefone 1</td>
+                    <td>Telefone 2</td>
                     <td>Celular</td>
                     <td colspan="2">E-mail</td>
-                    <td colspan="2"></td>
+                    <td colspan="2"></td>                    
                 </tr> 
+                <?php foreach($rows as $row){ ?>
+                    <tr>
+                        <td><?= $row['cod_contato'] ?></td>
+                        <td colspan="2"><?= $row['nome_contato'] ?></td>
+                        <td><?= $row['telefone_1'] ?></td>
+                        <td><?= $row['telefone_2'] ?></td>
+                        <td><?= $row['celular'] ?></td>
+                        <td colspan="2"><?= $row['email'] ?></td>  
+                        <td colspan="8">
+                            <a class="edit_button" href="/contato/editar?cod_contato=<?= $row['cod_contato'] ?>">Editar</a> 
+                            <a class="delete_button" href="/contato/excluir?cod_contato=<?= $row['cod_contato'] ?>">Excluir</a> 
+                        </td>                  
+                    </tr>
+                <?php } ?>
                 <tr><td class="col_base"></td></tr>
                 <tr>
                     <td class="col_base"><a class="button new_button" href="/contato/cadastrar?cod_cliente=<?= $row['cod_cliente']?>">Novo Contato</a></td>
                 </tr>
                 <tr><td class="col_base"></td></tr>
                 <tr class="title">
-                    <td colspan="8">
+                    <td colspan="9">
                         <button class="new_button" type="submit">Salvar</button>
                         <a class="button delete_button" href="/">Cancelar</a>
                     </td>                  

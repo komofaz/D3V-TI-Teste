@@ -9,7 +9,7 @@
 </head>
 <body>
     <div>
-        <h2>Editar Cliente / Incluir Contatos</h2>
+        <h2>Editar Contato</h2>
 
         <form action="/cliente/editar/atualizar" method="POST">
             <table>
@@ -20,66 +20,37 @@
                     <td class="col_base"></td>
                     <td class="col_base"></td>
                     <td class="col_base"></td>
-                    <td class="col_base"></td>
                     <td class="col_base" colspan="2"></td>
                 </tr>
                 <tr class="td_left">
-                    <td class="title" >Cód. Cliente:</td>                    
-                    <td colspan="8"><input class="readonly" type="number" name="cod_cliente" value="<?= $row['cod_cliente'] ?>" readonly></td>
+                    <td class="title" >Cód. Contato:</td>                    
+                    <td colspan="8"><input class="readonly" type="number" name="cod_cliente" value="<?= $row['cod_contato'] ?>" readonly></td>
                 </tr>
                 <tr class="td_left">
-                    <td class="title">Razão Social:</td>
-                    <td colspan="8"><input type="text" name="razao_social" size="100" required maxlength="100" value="<?= $row['razao_social'] ?>"></td>
+                    <td class="title">Nome:</td>
+                    <td colspan="8"><input type="text" name="nome_contato" size="100" required maxlength="100" value="<?= $row['nome_contato'] ?>"></td>
                 </tr>
                 <tr class="td_left">
-                    <td class="title">Nome Fantasia:</td>
-                    <td colspan="8"><input type="text" name="nome_fantasia" size="60" required maxlength="50" value="<?= $row['nome_fantasia'] ?>"></td>
+                    <td class="title">Telefone 1:</td>
+                    <td colspan="8"><input type="text" name="telefone_1" size="20" maxlength="13" value="<?= $row['telefone_1'] ?>"></td>
                 </tr>
                 <tr class="td_left">
-                    <td class="title">Endereço:</td>
-                    <td colspan="8"><input type="text" name="endereco" size="100" maxlength="100" value="<?= $row['endereco'] ?>"></td>
+                    <td class="title">Telefone 2:</td>
+                    <td colspan="8"><input type="text" name="telefone_2" size="20" maxlength="13" value="<?= $row['telefone_2'] ?>"></td>
                 </tr>
                 <tr class="td_left">
-                    <td class="title">Complemento:</td>
-                    <td colspan="8"><input type="text" name="complemento" size="60" maxlength="50" value="<?= $row['complemento'] ?>"></td>
+                    <td class="title">Celular:</td>
+                    <td colspan="8"><input type="text" name="celular" size="20" maxlength="14" value="<?= $row['celular'] ?>"></td>
                 </tr>
                 <tr class="td_left">
-                    <td class="title">Bairro:</td>
-                    <td colspan="8"><input type="text" name="bairro" size="60" maxlength="50" value="<?= $row['bairro'] ?>"></td>
-                </tr>
-                <tr class="td_left">
-                    <td class="title">Cidade:</td>
-                    <td colspan="8"><input type="text" name="cidade" size="60" maxlength="50" value="<?= $row['cidade'] ?>"></td>
-                </tr>
-                <tr class="td_left">
-                    <td class="title">Estado:</td>
-                    <td colspan="8"><input type="text" name="estado" size="4" maxlength="2" value="<?= $row['estado'] ?>" style="text-transform:uppercase"></td>
-                </tr>
-                <tr class="td_left">
-                    <td class="title" >Data de Inclusão:</td>
-                    <td colspan="8"><input class="readonly" type="text" name="data_inclusao" value="<?= date("d-m-Y",strtotime($row['data_inclusao'])) ?>" readonly></td>                    
-                </tr>  
-                <tr>
-                    <td class="col_base sub_title td_left">Contatos</td>
-                    <td class="col_base"></td>
-                </tr>   
-                <tr class="title">
-                    <td>Cód. Contato</td>
-                    <td colspan="2">Nome</td>
-                    <td>Telefone</td>
-                    <td>Celular</td>
-                    <td colspan="2">E-mail</td>
-                    <td colspan="2"></td>
-                </tr> 
-                <tr><td class="col_base"></td></tr>
-                <tr>
-                    <td class="col_base"><a class="button new_button" href="/contato">Novo Contato</a></td>
+                    <td class="title">E-mail:</td>
+                    <td colspan="8"><input type="text" name="email" size="60" maxlength="50" value="<?= $row['email'] ?>"></td>
                 </tr>
                 <tr><td class="col_base"></td></tr>
                 <tr class="title">
                     <td colspan="8">
                         <button class="new_button" type="submit">Salvar</button>
-                        <a class="button delete_button" href="/">Cancelar</a>
+                        <a class="button delete_button" href="/cliente/editar?cod_cliente=<?= $row['cod_cliente']?>">Cancelar</a>
                     </td>                  
                 </tr> 
             </table>             

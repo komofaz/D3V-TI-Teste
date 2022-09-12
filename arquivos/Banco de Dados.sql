@@ -15,8 +15,8 @@ create table Cliente(
 );
 
 create table Contato(
-    cod_cliente BIGINT NOT NULL AUTO_INCREMENT,
-    cod_contato INT NOT NULL,
+    cod_cliente BIGINT NOT NULL,
+    cod_contato INT NOT NULL AUTO_INCREMENT,
     nome_contato VARCHAR(100) NOT NULL,
     telefone_1 CHAR(13),
     telefone_2 CHAR(13),

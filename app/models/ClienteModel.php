@@ -20,9 +20,18 @@
         }
 
         public function listar(){
-            $rows = $this->connection->query('SELECT * FROM Cliente;') or die(mysqli_error($this->connection)); 
+            $rows = $this->connection->query(
+                'SELECT cliente.*,COUNT(contato.cod_cliente) as contatos FROM cliente LEFT JOIN contato ON cliente.cod_cliente=contato.cod_cliente GROUP BY contato.cod_cliente;'
+            );
             return $rows;       
-        }       
+        }  
+        
+        public function listar_contatos(){
+            $rows = $this->connection->query(
+                'SELECT * FROM contato WHERE cod_cliente ='.$this->cod_cliente.';'
+            );
+            return $rows;
+        }
 
         public function atualizar(){
             $rows = $this->connection->query('UPDATE Cliente SET razao_social="'.$this->razao_social.'",nome_fantasia="'.$this->nome_fantasia.'",
@@ -35,7 +44,8 @@
             $rows = $this->connection->query(
                 'INSERT INTO CLiente(razao_social,nome_fantasia,endereco,complemento,bairro,cidade,estado,data_inclusao) 
                  VALUES ("'.$this->razao_social.'","'.$this->nome_fantasia.'","'.$this->endereco.'","'.$this->complemento.'",
-                         "'.$this->bairro.'","'.$this->cidade.'","'.$this->estado.'","'.$this->data_inclusao.'");'); 
+                         "'.$this->bairro.'","'.$this->cidade.'","'.$this->estado.'","'.$this->data_inclusao.'");'
+            ); 
             return $rows;
         }        
 

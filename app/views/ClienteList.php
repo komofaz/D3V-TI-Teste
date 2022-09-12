@@ -25,13 +25,17 @@
                     <td class="td_left"><?= $row['razao_social'] ?></td>
                     <td class="td_left"><?= $row['nome_fantasia'] ?></td>
                     <td><?= date("d-m-Y", strtotime($row['data_inclusao'])) ?></td>
-                    <td class="td_right"></td>
+                    <td><?= $row['contatos'] ?></td>
                     <td class="small">
                         <a class="edit_button" href="/cliente/editar?cod_cliente=<?= $row['cod_cliente'] ?>">Editar</a>                        
-                    </td>                    
-                    <td class="small">
-                        <a class="delete_button" href="/cliente/excluir?cod_cliente=<?= $row['cod_cliente'] ?>">Excluir</a>
-                    </td>
+                    <?php 
+                        if ((int)$row['contatos'] == 0){                                                    
+                            echo '<a class="delete_button" href="/cliente/excluir?cod_cliente='.$row['cod_cliente'].'">Excluir</a>';                        
+                        } else {
+                            echo '<a class="disabled delete_button" href="/">Excluir</a>';
+                        }
+                    ?>
+                    </td>       
                 </tr>
             <?php endforeach ?>            
         </table>           

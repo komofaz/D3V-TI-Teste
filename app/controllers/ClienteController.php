@@ -49,6 +49,7 @@
         public function editar(){
             $this->model->cod_cliente = $_GET['cod_cliente'];
             $row = $this->model->busca_cod();
+            $rows  = $this->model->listar_contatos();
             require_once('./views/ClienteEditar.php');            
         }
 
