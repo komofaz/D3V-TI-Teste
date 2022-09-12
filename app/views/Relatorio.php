@@ -18,12 +18,9 @@
                         $sub_title = 'SEM CONTATO';
                         break;
                     case 1:
-                        $sub_title = 'SEM TELEFONE';
+                        $sub_title = 'SEM TELEFONE/CELULAR';
                         break;
-                    case 2:
-                        $sub_title = 'SEM CELULAR';
-                        break;
-                    case 3:
+                    case 2:                        
                         $sub_title = 'SEM E-MAIL';
                         break;
                     default:

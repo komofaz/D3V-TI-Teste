@@ -90,9 +90,9 @@ function celular(valor){
     mascara = mascara.replace(/^0/, "");
     if (mascara.length > 6) {
         mascara = mascara.replace(/^(\d\d)(\d{5})(\d{0,4}).*/, "($1)$2-$3");
-    } else if (mascara.length > 2) {
+    } else if (mascara.length > 1) {
         mascara = mascara.replace(/^(\d\d)(\d{0,5})/, "($1)$2");
-    } else {
+    } else if (mascara.length == 1){
         mascara = mascara.replace(/^(\d*)/, "($1");
     }
     return mascara;
