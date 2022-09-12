@@ -95,7 +95,7 @@
                 <tr class="title">
                     <td colspan="9">
                         <button class="new_button" type="submit">Salvar</button>
-                        <a class="button delete_button" href="/">Cancelar</a>
+                        <a class="button edit_button" href="/">Voltar</a>
                     </td>                  
                 </tr> 
             </table>             

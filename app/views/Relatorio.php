@@ -12,7 +12,7 @@
         <h2>Relatório</h2>
 
         <?php for($x=0; $x < count($rows); $x++){
-            if (!empty($rows[$x])){
+            if (mysqli_num_rows($rows[$x]) > 0){
                 switch($x){
                     case 0:
                         $sub_title = 'SEM CONTATO';
@@ -39,16 +39,14 @@
                             <td class="col_base"></td>
                             <td class="col_base"></td>
                             <td class="col_base"></td>
-                            <td class="col_base"></td>
                             <td class="col_base" colspan="2"></td>
                         </tr>
-                        <tr><td colspan="9" class="title">'.$sub_title.'</td></tr>
+                        <tr><td colspan="9" class="warning_title">'.$sub_title.'</td></tr>
                         <tr class="title">
                             <td class="small">Cód. Cliente</td>
                             <td colspan="3">Razão Social</td>
                             <td colspan="2">Nome Fantasia</td>
                             <td colspan="1">Data de Inclusão</td>
-                            <td colspan="1">Nº Contatos</td>
                             <td class="small" colspan="2"></td>
                         </tr>';              
                    
@@ -59,7 +57,6 @@
                             <td colspan="3" class="td_left">'.$row['razao_social'].'</td>
                             <td colspan="2" class="td_left">'.$row['nome_fantasia'].'</td>
                             <td colspan="1">'.date('d-m-Y', strtotime($row['data_inclusao'])).'</td>
-                            <td colspan="1">'.$row['contatos'].'</td>
                             <td class="small">
                                 <a class="edit_button" href="/cliente/editar?cod_cliente='.$row['cod_cliente'].'">Editar</a>                       
                             </td>

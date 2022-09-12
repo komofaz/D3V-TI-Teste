@@ -37,6 +37,11 @@ td{
     font-weight: bold;
 }
 
+.warning_title{
+    background-color: #696969;
+    color: white;
+}
+
 .small{
     width: 5%;
 }
